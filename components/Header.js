@@ -1,5 +1,4 @@
 import Link from "next/link";
-import {Layout} from "./Layout";
 
 export const Header = (props) =>{
 

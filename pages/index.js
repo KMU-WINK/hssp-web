@@ -1,3 +1,4 @@
+import React from "react";
 import Link from 'next/link';
 import {Layout} from "../components/Layout";
 // import '../css/default.css';
@@ -5,9 +6,7 @@ import {Layout} from "../components/Layout";
 const Index = () => {
     return <>
         <Layout>
-            <h1>
-                <a>hello, next.js</a>
-            </h1>
+            안뇽
         </Layout>
     </>;
 };
