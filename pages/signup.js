@@ -39,7 +39,7 @@ const SignUp = () => {
                 checkboxmessage="고속상황전파체계 서비스 이용 약관동의 (필수)"
             />
             <CheckBox
-                checkboxmessage="개인정보취급방침 동의(필수)"
+                checkboxmessage="개인정보취급방침 동의 (필수)"
             />
         </Layout>
     </>;
