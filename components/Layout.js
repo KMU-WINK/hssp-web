@@ -6,6 +6,7 @@ const GlobalCSS = () => {
         body {
             margin:0;
             padding:0;
+            background-color:#E5E5E5;
         }
         ul {
             padding:0;
