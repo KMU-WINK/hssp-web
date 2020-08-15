@@ -46,13 +46,15 @@ const styles = {
     },
     manufacturer : {
         color: "#CACACA",
-        display : "inline-block",
-        margin : "6px 0 0 10px",
-        position : "absolute",
+        display : "block",
+        margin : "6px 0 0 0",
+        position : "relative",
     },
     kcal : {
         fontSize: 14,
         color : "#000000",
-        display : "inline-block",
+        display : "block",
+        margin : "14px 0 0 0",
+        position : "relative"
     },
 };
