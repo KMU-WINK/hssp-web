@@ -2,6 +2,7 @@ import sReact from "react";
 import Link from 'next/link';
 import {Layout} from "../components/Layout";
 import {InputBox} from "../components/InputBox";
+import {CheckBox} from "../components/CheckBox";
 
 const SignUp = () => {
 
@@ -33,6 +34,12 @@ const SignUp = () => {
                 name="생년월일"
                 placeholder=""
 
+            />
+            <CheckBox
+                checkboxmessage="고속상황전파체계 서비스 이용 약관동의 (필수)"
+            />
+            <CheckBox
+                checkboxmessage="개인정보취급방침 동의(필수)"
             />
         </Layout>
     </>;
