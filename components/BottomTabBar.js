@@ -6,7 +6,7 @@ export const BottomTabBar = (props) => {
         <nav style={styles.tabBar}>
             <ul style={styles.menu}>
                 {/*{props.menus.map(oneMenu => <li><Link href={oneMenu.link}><img src={oneMenu.iconSource} /></Link></li>)}*/}
-                <img src={require('../assets/BottomTabBar/food.svg')} />
+                {/*<img src={require('../assets/BottomTabBar/food.svg')} />*/}
             </ul>
         </nav>
     </>;
