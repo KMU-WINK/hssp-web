@@ -1,9 +1,9 @@
 {
-  "name": "hello-next",
+  "name": "hssp-web",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "../hello-next/node_modules/.bin/next"
+    "dev": "./node_modules/.bin/next"
   },
   "dependencies": {
     "next": "^9.4.4",
