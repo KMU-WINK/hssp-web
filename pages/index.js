@@ -3,12 +3,18 @@ import Link from 'next/link';
 import {Layout} from "../components/Layout";
 import {Card} from "../components/Card";
 import {MenuCard} from "../components/MenuCard";
+import {CardHeader} from "../components/CardHeader";
+import {CountCard} from "../components/CountCard";
 
 // import '../css/default.css';
 
 const Index = () => {
     return <>
         <Layout>
+            <CardHeader
+                name = "오늘의 식단"
+                settingBtn = "식단관리"
+            />
             <Card>
                 <MenuCard
                     name ="점심"
@@ -17,6 +23,17 @@ const Index = () => {
                     protein = '132'
                     fat = '242'
                     calbohydrate = '252'
+                />
+            </Card>
+            <CardHeader
+                name = "전역일 계산"
+                settingBtn = "휴가관리"
+            />
+            <Card>
+                <CountCard
+                    hundred ="1"
+                    ten = '3'
+                    one = '9'
                 />
             </Card>
         </Layout>
