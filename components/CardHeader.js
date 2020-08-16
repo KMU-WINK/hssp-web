@@ -41,5 +41,5 @@ const styles = {
         borderRadius: 8,
         backgroundColor : '#737373',
         textShadow : '1px 1px 0px rgba(0, 0, 0, 0.14)',
-    }
+    },
 };

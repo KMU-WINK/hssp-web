@@ -34,6 +34,17 @@ const Index = () => {
                     hundred ="1"
                     ten = '3'
                     one = '9'
+                    min1 = '1'
+                    min2 = '1'
+                    min3 = '1'
+                    min4 = '1'
+                    sec = '58.55356'
+                    mealCount = '1547'
+                    yearBreak='13'
+                    oneBreak='1'
+                    twoBreak='2'
+                    twoBreak2='3'
+                    specialBreak='4'
                 />
             </Card>
         </Layout>
