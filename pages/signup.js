@@ -50,6 +50,8 @@ const styles = {
         fontSize : 24,
         marginTop : 90,
         marginLeft : 20,
+        fontWeight: 'bold',
+
 
     }
 

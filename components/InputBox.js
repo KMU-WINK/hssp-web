@@ -24,7 +24,9 @@ const styles = {
         marginLeft:20,
         marginTop: 30,
         textAlign:'right',
-        alignItems:'center',
+        // alignItems:'center',
+        position: 'absolute',
+
     },
     input : {
         height:33,
@@ -32,14 +34,16 @@ const styles = {
         borderRadius:4,
         border:'none',
         boxShadow:'0px 1px 0px rgba(0, 0, 0, 0.12)',
-        marginLeft:10,
-        marginTop: 30,
+        marginLeft:100,
+        marginTop: 25,
+
     },
     detailmessage : {
         fontSize: 9,
         marginTop: 10,
         flexDirection : 'column',
         marginLeft:42,
+
 
     }
 };
