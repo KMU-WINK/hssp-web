@@ -1,25 +1,19 @@
 import React from 'react';
-import Link from "next/link";
 
-export const Card = (props) =>{
-
-    return <>
-        <h1 style={styles.sectionTitle}>{props.title}</h1>
-
-        <div style={styles.card}>
-            {props.children}
-        </div>
-    </>;
-};
-
+export function Card(props) {
+    return (
+      <div style={styles.Card}>
+          {props.children}
+      </div>
+    );
+}
 const styles = {
-    card:{
-        padding:20,
-        backgroundColor:'#fff',
-        borderRadius:5,
-    },
-    sectionTitle:{
-        fontSize:16,
-        fontWeight:'bold',
-    },
-};
+    Card : {
+        background:'#FFFFFF',
+        boxShadow: '1px 1px 3px rgba(0, 0, 0.17)',
+        padding:15,
+        margin : '20px 20px 30px 20px',
+        width : 280,
+        borderRadius:10,
+    }
+}
