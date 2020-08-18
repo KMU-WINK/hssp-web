@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {Layout} from "../components/Layout";
 import {InputBox} from "../components/InputBox";
 import {CheckBox} from "../components/CheckBox";
+import {Button} from "../components/Button";
 
 
 
@@ -14,6 +15,9 @@ const SignUp = () => {
     return <>
         <Layout>
             <h1 id="signinm" style={styles.signinm}>이미 회원인데요?!</h1>
+            <Button
+                buttonname ="로 그 인"
+            />
             <h1 id="signupm" style={styles.signupm}>회원가입</h1>
             <InputBox
                 name="전화번호"

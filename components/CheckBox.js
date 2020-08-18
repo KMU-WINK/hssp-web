@@ -28,6 +28,7 @@ const styles = {
         height: 36,
         fontSize: 12,
         alignItems: 'center',
+        position: "absolute",
 
     }
 
