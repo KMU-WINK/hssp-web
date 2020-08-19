@@ -1,10 +1,10 @@
 import React from "react";
 import Link from 'next/link';
 import {Layout} from "../components/Layout";
-import {Card} from "../components/Card";
-import {MenuCard} from "../components/MenuCard";
-import {CardHeader} from "../components/CardHeader";
-import {CountCard} from "../components/CountCard";
+import {Card} from "../components/common/Card";
+import {MenuCard} from "../components/Home/MenuCard";
+import {CardHeader} from "../components/Home/CardHeader";
+import {CountCard} from "../components/Home/CountCard";
 
 // import '../css/default.css';
 

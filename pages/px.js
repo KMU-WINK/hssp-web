@@ -1,6 +1,6 @@
 import React from "react";
 import {Layout} from "../components/Layout";
-import {PXCard} from "../components/PXCard";
+import {PXCard} from "../components/PX/PXCard";
 
 const PX = () =>{
     return <>
