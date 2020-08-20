@@ -2,8 +2,8 @@ import sReact from "react";
 import Link from 'next/link';
 
 import {Layout} from "../components/Layout";
-import {InputBox} from "../components/InputBox";
-import {CheckBox} from "../components/CheckBox";
+import {InputBox} from "../components/common/InputBox";
+import {CheckBox} from "../components/common/CheckBox";
 import {Button} from "../components/Button";
 
 

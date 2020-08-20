@@ -1,9 +1,9 @@
 import React from "react";
 import Link from 'next/link';
 import {Layout} from "../components/Layout";
-import {InputBox} from "../components/InputBox";
-import {Card} from "../components/Card";
-import {SwitchItem} from "../components/SwitchItem";
+import {InputBox} from "../components/common/InputBox";
+import {Card} from "../components/common/Card";
+import {SwitchItem} from "../components/common/SwitchItem";
 
 const Settings = () => {
     const [meal, setMeal] = React.useState('');
