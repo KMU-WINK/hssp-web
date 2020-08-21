@@ -3,7 +3,9 @@ import React from 'react';
 export function BenefitCard(props) {
     return(
         <div style={styles.card}>
-            <img style={styles.img} src={props.logo} alt="로고"/>
+            <div style={styles.imgbox}>
+                <img style={styles.img} src={props.logo} alt="로고"/>
+            </div>
             <div style={styles.detailDiv}>
                 <p style={styles.cardName}>{props.cardName}</p>
                 <p style={styles.benefitSummary}>{props.benefitSummary}</p>
@@ -16,11 +18,22 @@ const styles = {
         height : 50,
         position : 'relative',
     },
-    img : {
-        position : 'absolute',
-        padding : '15px 0 0 5px',
-        width : 60,
+    imgbox : {
+        position:'absolute',
+        maxWidth: 65,
+        Height : 50,
         display : 'inline',
+        textAlign :'center',
+        lineHeight : '50px',
+    },
+    img : {
+        position : 'relative',
+        maxWidth : '100%',
+        maxHeight: '100%',
+        width : 'auto',
+        height : 'auto',
+        margin : 'auto',
+        verticalAlign : 'middle',
     },
     detailDiv : {
         position : 'relative',

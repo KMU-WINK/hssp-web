@@ -8,11 +8,11 @@ const DiscountBenfits = () =>{
     return <>
         <Layout>
             <CardHeader
-                name = "카드혜택"
+                name = "카드 혜택"
             />
             <Card>
                 <BenefitCard
-                    logo = "https://lh3.googleusercontent.com/proxy/0AANyxtBCrigzdnafin1qZ9QYsuaVOakfdeD4PctbyMoxPnkG9ljwODY6Arep0RSaPHfQoDkR7DtPUaOFEbIbM25EFk6v7oR4O527u-2kDK3CU3e46W5nZEb9LZPo_gOt4a8f-Yo9k1FgPgvaY49AgZFQtMW1tkCULzRUOEu9tAdF9sOCLQFblKs8K8"
+                    logo = "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBrop5%2Fbtqy0pZ3Nsp%2FZpsMQnl64Uz0WQJjXXgI7k%2Fimg.jpg"
                     cardName = "IBK 기업은행 나라사랑카드 혜택"
                     benefitSummary = "CU 5% 할인 등"
                 />
