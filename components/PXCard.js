@@ -23,34 +23,42 @@ export const PXCard = (props)=>{
 const styles = {
     div : {
         width: 240,
-        height: 140,
+        height: 130,
         background: "#FFFFFF",
         borderRadius: 10,
     },
     img : {
         height: 100,
-        width : 100,
+        width : 85,
         display : "inline-block",
-        padding : "20px 10px 20px 20px",
+        marginTop : 15,
+        marginLeft : 12,
         position : "relative",
     },
     product : {
+        fontWeight: "bold",
+        fontSize: 16,
+        width: 120,
+        height: 24,
+        marginLeft: 8,
+        marginTop : 15,
         display : "inline",
         position : "absolute",
-        margin : "20px 20px 20px 0",
     },
     name : {
         fontSize: 18,
         color: "#363636",
-        position : "relative"
+        position : "relative",
+        marginTop: 5,
     },
     manufacturer : {
         color: "#CACACA",
         display : "block",
-        margin : "6px 0 0 0",
+        marginTop: 10,
         position : "relative",
     },
     kcal : {
+        fontWeight: "normal",
         fontSize: 14,
         color : "#000000",
         display : "block",
