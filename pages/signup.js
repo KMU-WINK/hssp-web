@@ -66,13 +66,12 @@ const SignUp = () => {
 const styles = {
     signinm : {
         fontSize : 24,
-        marginTop : 90,
         marginLeft : 21,
         fontWeight: 'bold',
+        letterSpacing : '0.24em',
     },
     signupm : {
         fontSize : 24,
-        marginTop : 90,
         marginLeft : 20,
         fontWeight: 'bold',
     },

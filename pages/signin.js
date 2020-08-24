@@ -2,7 +2,7 @@ import {Layout} from "../components/Layout";
 import {InputBox} from "../components/common/InputBox";
 import {Button} from "../components/Button";
 import {ErrorBox} from "../components/common/ErrorBox";
-
+import {TextBox} from "../components/common/TextBox";
 const Signin = () => {
     return <>
             <Layout>
@@ -23,6 +23,10 @@ const Signin = () => {
                 />
                 <Button
                     buttonname ="로 그 인"
+                />
+                <TextBox
+                    text="허걱쓰.. Hoxy 아이디나 패스워드를 잊어버리셨어요?"
+                    link="계정 정보 찾기"
                 />
             </Layout>
         </>

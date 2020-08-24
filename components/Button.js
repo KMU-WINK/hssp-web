@@ -12,7 +12,6 @@ export function Button(props){
 
 const styles = {
     button : {
-        position: 'absolute',
         width: 280,
         height: 42,
         left: 20,
@@ -21,6 +20,7 @@ const styles = {
         borderRadius:35,
         border:'none',
         color:'white',
+        margin : 20,
     },
     btext : {
         fontWeight:'bold',

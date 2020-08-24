@@ -27,5 +27,6 @@ const styles = {
         letterSpacing : '0.24em',
         color : '#FFFFFF',
         fontSize : 16,
+        wordWrap : 'break-word',
     }
 }
