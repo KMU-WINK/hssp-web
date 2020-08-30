@@ -6,17 +6,21 @@ export function CardHeader(props){
             <div style={styles.name}>
                 {props.name}
             </div>
-            <div style={styles.settingBtn}>
-                {props.settingBtn}
-            </div>
+            {props.settingBtn &&
+                <div style={styles.settingBtn}>
+                    {props.settingBtn}
+                </div>
+            }
+
         </div>
     );
 }
 
 const styles = {
     header : {
-        width : 310,
-        margin : 20,
+        width : '100%',
+        marginTop:20,
+        marginBottom:20,
     },
     name : {
         display : 'inline-block',
