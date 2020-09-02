@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {Layout} from "../components/Layout";
 import {Card} from "../components/common/Card";
 import {MenuCard} from "../components/Home/MenuCard";
-import {CardHeader} from "../components/Home/CardHeader";
+import {CardHeader} from "../components/common/CardHeader";
 import {CountCard} from "../components/Home/CountCard";
 
 // import '../css/default.css';

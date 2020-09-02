@@ -1,7 +1,7 @@
 import React from "react";
 import {Layout} from "../components/Layout";
-import {Card} from "../components/Card";
-import {CardHeader} from "../components/CardHeader";
+import {Card} from "../components/common/Card";
+import {CardHeader} from "../components/common/CardHeader";
 import {BenefitCard} from "../components/BenefitCard";
 
 const DiscountBenfits = () =>{
