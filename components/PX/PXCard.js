@@ -1,4 +1,5 @@
 import React from 'react';
+import {colorSet} from "../../lib/ColorSet";
 
 export const PXCard = (props)=>{
     return <>
@@ -28,7 +29,7 @@ const styles = {
         marginLeft:40,
         width: 240,
         height: 130,
-        background: "#FFFFFF",
+        background: colorSet.white,
         borderRadius: 10,
         boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.17)",
     },
@@ -52,7 +53,7 @@ const styles = {
     },
     name : {
         fontSize: 18,
-        color: "#363636",
+        color: colorSet.deepblack,
         position : "relative",
         marginTop: 5,
     },
@@ -67,7 +68,7 @@ const styles = {
     kcal : {
         fontWeight: "normal",
         fontSize: 12,
-        color : "#000000",
+        color : colorSet.black,
         display : "block",
         margin : "14px 0 0 0",
         position : "relative"

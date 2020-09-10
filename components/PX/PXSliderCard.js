@@ -1,6 +1,7 @@
 import React from 'react';
+import {colorSet} from "../../lib/ColorSet";
 
-export const PXCard2 = (props)=>{
+export const PXSliderCard = (props)=>{
     return <>
         <div style = {styles.div}>
             <img src={props.productImage} alt="" style = {styles.img}/>
@@ -28,7 +29,7 @@ const styles = {
         width: 280,
         height: 130,
         marginLeft:20,
-        background: "#FFFFFF",
+        background: colorSet.white,
         borderRadius: 10,
         boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.17)",
     },
@@ -53,13 +54,13 @@ const styles = {
         height:140,
         fontSize: 14,
         fontWeight: "bold",
-        color: "#363636",
+        color: colorSet.deepblack,
         position : "relative",
         marginTop: 5,
     },
     kcal : {
         marginTop:30,
-        color: "#737373",
+        color: colorSet.grey,
         fontWeight: "normal",
         fontSize: 12,
         display : "block",

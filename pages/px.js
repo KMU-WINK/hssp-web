@@ -1,7 +1,9 @@
 import React from "react";
 import {Layout} from "../components/Layout";
 import {PXCard} from "../components/PX/PXCard";
-import {PXCard2} from "../components/PX/PXCard2";
+import {PXSliderCard} from "../components/PX/PXSliderCard";
+import {colorSet} from "../lib/ColorSet";
+
 
 const PX = () =>{
     return <>
@@ -13,21 +15,28 @@ const PX = () =>{
                 productManufacturer = "농심"
                 productKcal = "75g, 320kcal"
             />
+
             <h2 style={styles.pxsubtitle}>PX 꿀조합</h2>
             <h4 style={styles.pxsubment}>근무 끝나고 먹으면 개꿀맛 ㅎ</h4>
-            <PXCard2
+            <PXSliderCard
                 productImage = "https://images.unsplash.com/photo-1597399400523-c84fe107928b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80"
                 productName ="뽀글이와 빅 소시지의 만남"
                 productKcal = "98g, 460kcal"
                 productRate = "★ ★ ★ ★ ★"
             />
-            <PXCard2
+            <PXSliderCard
                 productImage = "https://images.unsplash.com/photo-1597399400523-c84fe107928b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80"
                 productName ="건빵 초코 퐁듀"
                 productKcal = "98g, 460kcal"
                 productRate = "★ ★ ★ ★ ★"
             />
-            <PXCard2
+            <PXSliderCard
+                productImage = "https://images.unsplash.com/photo-1597399400523-c84fe107928b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80"
+                productName ="건빵 초코 퐁듀"
+                productKcal = "98g, 460kcal"
+                productRate = "★ ★ ★ ★ ★"
+            />
+            <PXSliderCard
                 productImage = "https://images.unsplash.com/photo-1597399400523-c84fe107928b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80"
                 productName ="건빵 초코 퐁듀"
                 productKcal = "98g, 460kcal"
@@ -40,10 +49,6 @@ const PX = () =>{
 
 
 const styles = {
-    pxcardd:{
-        display:"inline",
-    },
-
     pxtitle: {
         fontSize : 24,
         marginTop : 30,
@@ -60,7 +65,7 @@ const styles = {
         marginTop:-10,
         fontSize : 9,
         marginLeft : 20,
-        color: "#737373",
+        color: colorSet.grey,
         marginBottom:15,
 
     }
