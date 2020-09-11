@@ -1,10 +1,13 @@
 import React from 'react';
 import Link from "next/link";
 import {colorSet} from "../lib/ColorSet";
-
+import PlusIcon from 'react-svg-loader!../assets/BottomTabBar/plusBtn.svg';
 export const BottomTabBar = (props) => {
     return <>
         <nav style={styles.tabBar}>
+            <div style={styles.plusIcon}>
+                <PlusIcon/>
+            </div>
             <ul className="container" style={styles.menu}>
                 {props.menus.map(menu => {
                     return <li style={styles.menuItem}><Link href={menu.link}>{menu.icon}</Link></li>
@@ -39,6 +42,11 @@ const styles = {
     menuItem:{
         textAlign:'center',
     },
-
+    plusIcon:{
+        position: 'absolute',
+        top: -26.5,
+        left: '50%',
+        marginLeft: -26.5,
+    },
 
 };
