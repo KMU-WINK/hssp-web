@@ -9,14 +9,15 @@ class CountAll extends React.Component {
         seconds: "0",
         h:"0",
         t:"0",
-        o:"0"
+        o:"0",
+        mealCount:"0"
     };
 
     intervalId;
     intervalId2;
 
     componentDidMount() {
-        const march = new Date("2020-9-22");
+        const march = new Date("2022-9-22"); //전역일값받아오기
         this.intervalId = setInterval(() => {
             this.countDay(march);
         }, 1000);
@@ -24,7 +25,7 @@ class CountAll extends React.Component {
     }
 
     render() {
-        const { days,h,t,o, hours, minutes, seconds, progress } = this.state;
+        const { days,h,t,o,mealCount, hours, minutes, seconds, progress } = this.state;
         return (
             <div style={styles.dayCountDiv}>
                 <div>
@@ -42,7 +43,6 @@ class CountAll extends React.Component {
                     </div>
                 </div>
                 <div>
-
                     <div style={styles.time}>
                         {hours}
                     </div>
@@ -52,13 +52,12 @@ class CountAll extends React.Component {
                     <div style={styles.time}>
                         {minutes}
                     </div>
-
-                    <div style={styles.time}>
+                    <div style={styles.sec}>
                         {seconds}s
                     </div>
-
-
-
+                </div>
+                <div style={styles.mealCount}>
+                    (식사집합 {mealCount}회)
                 </div>
             </div>
 
@@ -79,7 +78,8 @@ class CountAll extends React.Component {
                 seconds: "0",
                 h:"0",
                 t:"0",
-                o:"0"
+                o:"0",
+                mealCount:"0",
             });
             clearInterval(this.intervalId);
         } else {
@@ -91,14 +91,19 @@ class CountAll extends React.Component {
             let mins = 0;
             let secs = 0;
             let sedays = 0;
+            let meadays = 0;
+            let mealCount="0";
 
             amount = Math.floor(amount / 1000);
             days = Math.floor(amount / 86400);
             sedays = days;
+            meadays = days;
+            mealCount = Math.floor(meadays*3);
             h = Math.floor(sedays / 100);
             sedays = sedays%100;
             t = Math.floor(sedays / 10);
             sedays = sedays%10;
+
             o = sedays;
             amount = amount % 86400;
             hours = Math.floor(amount / 3600);
@@ -110,7 +115,7 @@ class CountAll extends React.Component {
                 ...this.state,
                 days,
                 hours,
-                h,t,o,
+                h,t,o,mealCount,
                 minutes: mins,
                 seconds: secs
             });
@@ -146,13 +151,28 @@ const styles = {
     },
     time : {
         width : 40,
-        height : 25,
+        height : 40,
         color : '#FFFFFF',
         display : 'inline-block',
         backgroundColor : '#6DB724',
         borderRadius : 4,
         textAlign : 'center',
         paddingTop:5,
+        fontSize:25,
+        fontWight : 'normal',
+        textShadow : '1px 1px 0px rgba(0, 0, 0, 0.15)',
+        margin : '0px 4px',
+    },
+    sec : {
+        width : 50,
+        height : 40,
+        color : '#FFFFFF',
+        display : 'inline-block',
+        backgroundColor : '#6DB724',
+        borderRadius : 4,
+        textAlign : 'center',
+        paddingTop:5,
+        fontSize:25,
         fontWight : 'normal',
         textShadow : '1px 1px 0px rgba(0, 0, 0, 0.15)',
         margin : '0px 4px',
@@ -164,7 +184,15 @@ const styles = {
         fontSize : 24,
         textAlign : 'center',
         color : '#6DB724',
-    }
+    },
+    mealCount : {
+          marginTop:10,
+        fontSize : 12,
+        letterSpacing : '0.24em',
+        color : '#333333',
+        paddingBottom : 20,
+    },
+
 };
 
 export default CountAll;
