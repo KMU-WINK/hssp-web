@@ -10,8 +10,7 @@ import FoodIcon from 'react-svg-loader!../assets/BottomTabBar/food.svg';
 import FoodActiveIcon from 'react-svg-loader!../assets/BottomTabBar/food_active.svg';
 import SettingIcon from 'react-svg-loader!../assets/BottomTabBar/settings.svg';
 import SettingActiveIcon from 'react-svg-loader!../assets/BottomTabBar/settings_active.svg';
-import plusIcon from 'react-svg-loader!../assets/BottomTabBar/plusBtn.svg';
-import xIcon from 'react-svg-loader!../assets/BottomTabBar/xBtn.svg';
+
 
 const GlobalCSS = () => {
     return <style jsx global>{`
@@ -63,6 +62,9 @@ const bottomMenus = [
 ];
 
 export const Layout = ({children}) => {
+
+    const [isOpenModal, setOpenModal] = React.useState(false);
+
     return <>
         <Header />
         <div>
@@ -72,6 +74,8 @@ export const Layout = ({children}) => {
         </div>
         <BottomTabBar
             menus={bottomMenus}
+            isOpenModal={isOpenModal}
+            toggleModel={()=>setOpenModal(!isOpenModal)}
         />
         <GlobalCSS />
     </>;

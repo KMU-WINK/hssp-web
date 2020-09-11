@@ -2,11 +2,17 @@ import React from 'react';
 import Link from "next/link";
 import {colorSet} from "../lib/ColorSet";
 import PlusIcon from 'react-svg-loader!../assets/BottomTabBar/plusBtn.svg';
+import XIcon from 'react-svg-loader!../assets/BottomTabBar/xBtn.svg';
 export const BottomTabBar = (props) => {
     return <>
+        {props.isOpenModal &&
+        <div style={styles.modal}>
+
+        </div>
+        }
         <nav style={styles.tabBar}>
-            <div style={styles.plusIcon}>
-                <PlusIcon/>
+            <div style={styles.plusIcon} onClick={props.toggleModel}>
+                {props.isOpenModal ? <XIcon/> : <PlusIcon/>}
             </div>
             <ul className="container" style={styles.menu}>
                 {props.menus.map(menu => {
@@ -18,6 +24,15 @@ export const BottomTabBar = (props) => {
 };
 
 const styles = {
+    modal:{
+        position:'fixed',
+        left:0,
+        right:0,
+        top:0,
+        bottom:0,
+        backgroundColor:'rgba(0,0,0,.5)',
+        zIndex:9,
+    },
     tabBar: {
         height:50,
         width:'100%',
@@ -29,6 +44,7 @@ const styles = {
         shadowOffsetY:1,
         shadowBlur:5,
         shadowColor:'rgba(0,0,0,.25)',
+        zIndex:10,
     },
 
     menu: {
