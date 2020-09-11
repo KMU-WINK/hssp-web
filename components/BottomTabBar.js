@@ -1,13 +1,66 @@
 import React from 'react';
 import Link from "next/link";
+import {BottomTabBarMenu} from "./BottomTabBarMenu";
 import {colorSet} from "../lib/ColorSet";
 import PlusIcon from 'react-svg-loader!../assets/BottomTabBar/plusBtn.svg';
 import XIcon from 'react-svg-loader!../assets/BottomTabBar/xBtn.svg';
+import Expend from "react-svg-loader!../assets/BottomTabBar/expend.svg";
+import Health from "react-svg-loader!../assets/BottomTabBar/health.svg";
+import Snack from "react-svg-loader!../assets/BottomTabBar/snack.svg";
+import Vacation from "react-svg-loader!../assets/BottomTabBar/vacation.svg";
+
+const menuBar1 = [
+    {
+        name: '지출 추가',
+        icon: <Expend />,
+    }
+];
+const menuBar2 = [
+    {
+        name: '운동 추가',
+        icon: <Health />,
+    }
+];
+const menuBar3 = [
+    {
+        name: '먹은간식추가',
+        icon: <Snack />,
+    }
+];
+const menuBar4 = [
+    {
+        name: '출타 추가',
+        icon: <Vacation />,
+    }
+];
 export const BottomTabBar = (props) => {
     return <>
         {props.isOpenModal &&
         <div style={styles.modal}>
-
+            <div style={styles.text}>
+                식단관리, 출타관리만 입력해주세요!
+            </div>
+            <div style={styles.text}>
+                생활관 막내가 자동으로 계산해줄게요!
+            </div>
+            <div style={styles.container}>
+                <div>
+                    <BottomTabBarMenu
+                        men={menuBar1}
+                    />
+                    <BottomTabBarMenu
+                        men={menuBar2}
+                    />
+                </div>
+                <div>
+                    <BottomTabBarMenu
+                        men={menuBar3}
+                    />
+                    <BottomTabBarMenu
+                        men={menuBar4}
+                    />
+                </div>
+            </div>
         </div>
         }
         <nav style={styles.tabBar}>
@@ -32,6 +85,23 @@ const styles = {
         bottom:0,
         backgroundColor:'rgba(0,0,0,.5)',
         zIndex:9,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+
+    },
+    container:{
+        display: 'flex',
+        flexDirection: 'row',
+        marginBottom: 100,
+    },
+    text: {
+        color:'#ffffff',
+        fontSize:12,
+        fontWeight:'bold',
+        letterSpacing:'0.24em',
+        textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)',
     },
     tabBar: {
         height:50,
