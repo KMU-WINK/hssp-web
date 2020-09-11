@@ -11,6 +11,7 @@ import FoodActiveIcon from 'react-svg-loader!../assets/BottomTabBar/food_active.
 import SettingIcon from 'react-svg-loader!../assets/BottomTabBar/settings.svg';
 import SettingActiveIcon from 'react-svg-loader!../assets/BottomTabBar/settings_active.svg';
 
+
 const GlobalCSS = () => {
     return <style jsx global>{`
         body {
@@ -61,6 +62,9 @@ const bottomMenus = [
 ];
 
 export const Layout = ({children}) => {
+
+    const [isOpenModal, setOpenModal] = React.useState(false);
+
     return <>
         <Header />
         <div>
@@ -70,6 +74,8 @@ export const Layout = ({children}) => {
         </div>
         <BottomTabBar
             menus={bottomMenus}
+            isOpenModal={isOpenModal}
+            toggleModel={()=>setOpenModal(!isOpenModal)}
         />
         <GlobalCSS />
     </>;
