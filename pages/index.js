@@ -5,8 +5,9 @@ import {Card} from "../components/common/Card";
 import {MenuCard} from "../components/Home/MenuCard";
 import {CardHeader} from "../components/common/CardHeader";
 import {CountCard} from "../components/Home/CountCard";
+// import Cal from "../components/Home/CountDay";
+import CountAll from "../components/Home/CountAll"
 
-// import '../css/default.css';
 
 const Index = () => {
     return <>
@@ -25,20 +26,16 @@ const Index = () => {
                     calbohydrate = '252'
                 />
             </Card>
+            {/*<Cal/>*/}
+
             <CardHeader
                 name = "전역일 계산"
                 settingBtn = "휴가관리"
             />
+
             <Card>
+                <CountAll/>
                 <CountCard
-                    hundred ="1"
-                    ten = '3'
-                    one = '9'
-                    min1 = '1'
-                    min2 = '1'
-                    min3 = '1'
-                    min4 = '1'
-                    sec = '58.55356'
                     mealCount = '1547'
                     yearBreak='13'
                     oneBreak='1'
@@ -47,6 +44,7 @@ const Index = () => {
                     specialBreak='4'
                 />
             </Card>
+
         </Layout>
     </>;
 };
