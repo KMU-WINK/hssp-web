@@ -8,7 +8,7 @@ import WebBtn from "react-svg-loader!../assets/landingPage/WebBtn.svg"
 import WebBtnActive from "react-svg-loader!../assets/landingPage/WebBtnActive.svg"
 import {LandingHeader} from "../components/LandingPage/LandingHeader"
 import {FirstSection} from "../components/LandingPage/FirstSection"
-
+import {SecondSection} from "../components/LandingPage/SecondSection"
 const downloads = [
     {
         name : "googlePlay",
