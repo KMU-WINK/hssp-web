@@ -98,7 +98,6 @@ export const Layout = ({children}) => {
                 toggleModel={()=>setOpenModal(!isOpenModal)}
             />
         }
-
         <GlobalCSS />
     </>;
 };

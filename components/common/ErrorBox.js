@@ -2,10 +2,10 @@ import React from 'react';
 
 export function ErrorBox(props) {
     React.useEffect(() => {
-        setTimeout(() => { // 3초 뒤 창을 닫음
+        setTimeout(() => { // 5초 뒤 창을 닫음
             props.setText('');
         }, 5000);
-    });
+    }, [props.text]);
 
 
     return (

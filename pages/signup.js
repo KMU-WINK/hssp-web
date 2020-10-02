@@ -1,5 +1,6 @@
 import sReact from "react";
 import Link from 'next/link';
+import React from "react";
 
 import {Layout} from "../components/Layout";
 import {InputBox} from "../components/common/InputBox";
@@ -7,7 +8,7 @@ import {CheckBox} from "../components/common/CheckBox";
 import {Button} from "../components/Button";
 import {useRouter} from "next/router";
 import {ErrorBox} from "../components/common/ErrorBox";
-import React from "react";
+import {Loading} from "../components/common/Loading";
 import {signUp} from "../lib/Server";
 
 const SignUp = () => {
@@ -18,19 +19,22 @@ const SignUp = () => {
     const [password, setPassword] = React.useState('');
     const [name, setName] = React.useState('');
     const [army, setArmy] = React.useState('육군');
-    const [birth, setBirth] = React.useState('');
     const [terms, setTerms] = React.useState(false);
     const [privacy, setPrivacy] = React.useState(false);
+    const [isLoading, setLoading] = React.useState(false);
+
     const onSignUp = async () => {
         let checkedField = 0;
-        const fields = [phone, password, name, army, birth];
+        const fields = [phone, password, name, army];
         fields.forEach(field => checkedField += !(!field)); // 비어있는 필드 카운트
         if (checkedField === fields.length)
         {
             // 약관 체크 후 가입
             if(terms && privacy)
             {
-                const signUpResponse = await signUp({phone, password, name, army, birth});
+                setLoading(true);
+                const signUpResponse = await signUp({phone, password, name, army});
+                setLoading(false);
                 if(!signUpResponse)
                 {
                     setErrorMsg('서버 요청 실패!');
@@ -110,14 +114,6 @@ const SignUp = () => {
                 <option value="대체복무">대체복무</option>
             </select>
 
-            <InputBox
-                name="생년월일"
-                placeholder="생년월일"
-                type="date"
-                value={birth}
-                onChange={setBirth}
-            />
-
             <CheckBox
                 checkboxmessage="고속상황전파체계 서비스 이용 약관동의 (필수)"
                 checked={terms}
@@ -134,6 +130,9 @@ const SignUp = () => {
                 onClick={onSignUp}
             />
         </Layout>
+        <Loading
+            isLoading={isLoading}
+        />
     </>;
 };
 
