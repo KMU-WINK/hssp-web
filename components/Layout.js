@@ -1,5 +1,6 @@
 import {BottomTabBar} from "./BottomTabBar";
 import {Header} from "./Header";
+import { useRouter } from 'next/router'
 import React from "react";
 
 import CalcIcon from 'react-svg-loader!../assets/BottomTabBar/calculator.svg';
@@ -64,6 +65,24 @@ const bottomMenus = [
 export const Layout = ({children}) => {
 
     const [isOpenModal, setOpenModal] = React.useState(false);
+    const [isLogged, setLogged] = React.useState(false);
+    const router = useRouter();
+    const allowNotLoggedPage = ['signin', 'signup'];
+    React.useEffect(() => {
+        const token = localStorage.getItem('token');
+        if(token !== null)
+        {
+            setLogged(true);
+        }
+        else
+        {
+            if (!allowNotLoggedPage.includes(router.pathname.replace('/', '')))
+            {
+                router.push('/signin');
+            }
+        }
+
+    }, ['']);
 
     return <>
         <Header />
@@ -72,11 +91,13 @@ export const Layout = ({children}) => {
                 {children}
             </div>
         </div>
-        <BottomTabBar
-            menus={bottomMenus}
-            isOpenModal={isOpenModal}
-            toggleModel={()=>setOpenModal(!isOpenModal)}
-        />
+        {isLogged &&
+            <BottomTabBar
+                menus={bottomMenus}
+                isOpenModal={isOpenModal}
+                toggleModel={()=>setOpenModal(!isOpenModal)}
+            />
+        }
         <GlobalCSS />
     </>;
 };
