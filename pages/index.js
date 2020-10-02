@@ -19,8 +19,12 @@ const Index = () => {
                 const foodResponse = await server.GetFoods();    //pxResponse에 값 저장.
                 if (foodResponse.status == 200) {    //status 200이면 pxResponse.data 값을 pxProducts 에 넣어줌.
                     setFood(foodResponse.data);
+                    let date = new Date();
+                    let time = date.getHours()
+                    console.log(time)
                     const menuSlider = document.querySelector("#menuSlider");
-                    menuSlider.scrollLeft = 420;
+                    menuSlider.scrollLeft = ((time >= 0) && (time < 9)) || ((time > 19) && (time <= 23)) ? 0 :
+                        (time >= 9) && (time < 13) ? 420 : 840
                 } else {
                     alert("Error")
                 }
