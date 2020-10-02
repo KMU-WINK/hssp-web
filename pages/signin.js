@@ -54,6 +54,7 @@ const Signin = () => {
                 <ErrorBox
                     title="띠로리~!"
                     text={errorMsg}
+                    setText={setErrorMsg}
                 />
 
                 {fields.map(field => React.createElement(InputBox, field))}

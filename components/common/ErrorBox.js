@@ -1,6 +1,13 @@
 import React from 'react';
 
 export function ErrorBox(props) {
+    React.useEffect(() => {
+        setTimeout(() => { // 3초 뒤 창을 닫음
+            props.setText('');
+        }, 3000);
+    });
+
+
     return (
         <div style={{...styles.box, ...(props.text) ? styles.boxVisible : {}}}>
             <h1 style={styles.title}>{props.title}</h1>

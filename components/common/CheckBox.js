@@ -4,7 +4,7 @@ export function CheckBox(props){
     return (
         <div>
 
-            <input type="checkbox" style={styles.checkbox}/>
+            <input type="checkbox" checked={props.checked} onChange={props.onChange} style={styles.checkbox}/>
             <label  style={styles.checkboxmessage}>
                 {props.checkboxmessage}
             </label>

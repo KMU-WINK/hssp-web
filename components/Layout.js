@@ -91,11 +91,14 @@ export const Layout = ({children}) => {
                 {children}
             </div>
         </div>
-        <BottomTabBar
-            menus={bottomMenus}
-            isOpenModal={isOpenModal}
-            toggleModel={()=>setOpenModal(!isOpenModal)}
-        />
+        {isLogged &&
+            <BottomTabBar
+                menus={bottomMenus}
+                isOpenModal={isOpenModal}
+                toggleModel={()=>setOpenModal(!isOpenModal)}
+            />
+        }
+
         <GlobalCSS />
     </>;
 };
