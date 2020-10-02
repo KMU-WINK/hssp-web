@@ -49,6 +49,9 @@ const styles = {
         boxShadow:'0px 1px 0px rgba(0, 0, 0, 0.12)',
         marginLeft:100,
         marginTop: 25,
+        paddingLeft:10,
+        paddingRight:10,
+        outline:'none',
 
     },
     detailmessage : {

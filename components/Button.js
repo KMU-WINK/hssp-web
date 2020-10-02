@@ -20,13 +20,14 @@ const styles = {
         border:'none',
         color:'white',
         margin : 20,
+        outline: 'none',
     },
     btext : {
         fontWeight:'bold',
         fontSize: 20,
         alignItems: 'center',
         textAlign: 'center',
-        letterSpacing: 0.24,
+        letterSpacing: 5,
         left: 20,
         top: 156,
     }

@@ -5,13 +5,24 @@ import {Layout} from "../components/Layout";
 import {InputBox} from "../components/common/InputBox";
 import {CheckBox} from "../components/common/CheckBox";
 import {Button} from "../components/Button";
+import {useRouter} from "next/router";
 
 const SignUp = () => {
+    const router = useRouter();
+    const [phone, setPhone] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [army, setArmy] = React.useState('');
+    const [birth, setBirth] = React.useState('');
+    const [terms, setTerms] = React.useState(false);
+    const [privacy, setPrivacy] = React.useState(false);
+
     return <>
         <Layout>
             <h1 id="signinm" style={styles.signinm}>이미 회원인데요?!</h1>
             <Button
-                buttonname ="로 그 인"
+                buttonname ="로그인"
+                onClick={()=>router.push('/signin')}
             />
             <h1 id="signupm" style={styles.signupm}>회원가입</h1>
             <InputBox
@@ -19,20 +30,26 @@ const SignUp = () => {
                 placeholder="전화번호 입력하세요"
                 type="text"
                 detailmessage="고속상황전파체계는 아이디 대신 전화번호로 로그인해요!"
+                onChange={setPhone}
+                value={phone}
             />
             <InputBox
                 name="패스워드"
                 placeholder="패스워드 입력하세요"
                 type="password"
+                onChange={setPassword}
+                value={password}
             />
             <InputBox
                 name="이름"
                 placeholder="이름을 입력하세요"
                 type="text"
+                onChange={setName}
+                value={name}
             />
             <h1 id="menu" style={styles.menu}>군 분류</h1>
 
-            <select style={styles.dropdown}>
+            <select style={styles.dropdown} value={army} onChange={setArmy}>
                 <option value="육군">육군</option>
                 <option value="해군">해군</option>
                 <option value="공군">공군</option>
@@ -45,7 +62,10 @@ const SignUp = () => {
 
             <InputBox
                 name="생년월일"
-                placeholder=""
+                placeholder="생년월일"
+                type="date"
+                value={birth}
+                onChange={setBirth}
             />
 
             <CheckBox
@@ -53,6 +73,10 @@ const SignUp = () => {
             />
             <CheckBox
                 checkboxmessage="개인정보취급방침 동의 (필수)"
+            />
+            <Button
+                buttonname ="회원가입"
+                onClick={()=>router.push('/signin')}
             />
         </Layout>
     </>;
