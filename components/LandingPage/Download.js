@@ -13,14 +13,15 @@ export const Download = (props) => {
 };
 const styles = {
     downloadIcons : {
+        width : '60%',
         height:'100%',
         listStyle:'none',
         display:'flex',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between',
+        justifyContent:'space-around',
+        marginBottom : '250px',
     },
     iconItem : {
-        textAlign:'center',
     },
 };

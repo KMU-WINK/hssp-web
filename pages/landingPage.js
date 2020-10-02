@@ -10,7 +10,7 @@ import {LandingHeader} from "../components/LandingPage/LandingHeader"
 import {Landingfooter} from "../components/LandingPage/Landingfooter"
 
 import {FirstSection} from "../components/LandingPage/FirstSection"
-
+import {SecondSection} from "../components/LandingPage/SecondSection"
 const downloads = [
     {
         name : "googlePlay",
