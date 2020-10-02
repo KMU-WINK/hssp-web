@@ -31,7 +31,7 @@ const styles = {
         maxWidth : '100%',
         maxHeight: '100%',
         width : 'auto',
-        height : 'auto',
+        height :60,
         margin : 'auto',
         verticalAlign : 'middle',
     },
