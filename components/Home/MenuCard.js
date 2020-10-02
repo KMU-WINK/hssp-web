@@ -2,58 +2,73 @@ import React from 'react';
 
 export function MenuCard(props){
     return (
-        <div>
-            <div style={styles.h1}>
-                {props.name}
+        <div style={styles.container}>
+            <div style={styles.menu}>
+                <div style={styles.name}>
+                    {props.name}
+                </div>
+                <div style={styles.kcal}>
+                    {props.calory}kcal
+                </div>
             </div>
-            <div style={styles.h3}>
-                {props.calory}kcal
-            </div>
-            <div>
-                <ul style={styles.ul}>
-                    {
-                        props.todayMenu.map(one => <li>{one}</li>)
-                    }
-                </ul>
-                <ul style ={styles.ul1}>
-                    <li>단백질 {props.protein}g</li>
-                    <li>지방 {props.fat}g</li>
-                    <li>탄수화물 {props.calbohydrate}g</li>
-                </ul>
+            <div style={styles.menu}>
+                <div>
+                    <ul>
+                        {props.todayMenu.map(one => <li style={styles.menuLi}>{one}</li>)}
+                    </ul>
+                </div>
+                <div style={styles.margintop}>
+                    <ul>
+                        <li style={styles.li}>
+                            <div style={styles.div}>단백질</div><div style={styles.div}>{props.protein}g</div>
+                        </li>
+                        <li style={styles.li}>
+                            <div style={styles.div}>탄수화물</div><div style={styles.div}>{props.carbohydrate}g</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
 }
 
 const styles = {
-    h1 : {
+    container : {
+        display:'flex',
+        flexDirection:'column',
+        justifyContent: 'space-between',
+    },
+    menu : {
+        display:'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 10,
+    },
+    name : {
         color:'#52CB64',
-        paddingBottom:15,
         fontSize:24,
         fontWeight: 'bold',
         letterSpacing:'0.14em',
-        display:'inline-block',
     },
-    h3 : {
-        paddingLeft: 140,
-        display:'inline-block',
+    kcal : {
         fontSize: 18,
         fontStyle:'normal',
         fontWeight:'normal',
+        marginTop:'7px',
     },
-    ul : {
-        display:'inline-block',
-        listStyle: 'none',
-        verticalAlign:'bottom',
-        fontSize:18,
-        fontStyle:'normal',
-        fontWeight:'normal',
-        lineHeight: 1.5,
+    li : {
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
     },
-    ul1 : {
-        paddingLeft: 42,
-        display:'inline-block',
-        textAlign:'right',
+    menuLi : {
         listStyle:'none',
+        lineHeight:'1.5',
     },
+    div : {
+        margin: '5px',
+    },
+    margintop : {
+        marginTop: 16,
+    }
 };
