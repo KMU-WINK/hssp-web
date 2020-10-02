@@ -1,14 +1,13 @@
-import {Download} from "../components/Download";
+import {Download} from "../components/LandingPage/Download";
 import React from "react";
-
 import GooglePlay from "react-svg-loader!../assets/landingPage/googlePlay.svg"
 import GooglePlayActive from "react-svg-loader!../assets/landingPage/googlePlayActive.svg"
 import AppStore from "react-svg-loader!../assets/landingPage/appStore.svg"
 import AppStoreActive from "react-svg-loader!../assets/landingPage/appStoreActive.svg"
 import WebBtn from "react-svg-loader!../assets/landingPage/WebBtn.svg"
 import WebBtnActive from "react-svg-loader!../assets/landingPage/WebBtnActive.svg"
-import Phone from "react-svg-loader!../assets/landingPage/phone.svg"
-
+import {LandingHeader} from "../components/LandingPage/LandingHeader"
+import {FirstSection} from "../components/LandingPage/FirstSection"
 
 const downloads = [
     {
@@ -30,25 +29,24 @@ const downloads = [
         link : '/',
     },
 ];
+const GlobalCSS = () => {
+    return <style jsx global>{`
+        body {
+            margin:0;
+            padding:0;
+            background-color:#F7F7F7;
+            font-family: SpoqaHanSans;
+            font-weight : lighter;
+        }
+        `}
+    </style>;
+};
 const LandingPage = () => {
     return<>
-        <header>
-            <div>
-                <p><b>소중한 당신</b>의 군 생활을</p>
-            </div>
-            <p>조금 더 알차게 만들어 줄 애플리케이션</p>
-            <h1>생활관 막내</h1>
-        </header>
+        <LandingHeader/>
         <section>
-            <Phone />
-            <div>
-                <p>한눈에 보는 <b>오늘의 식단</b></p>
-                <p>한 끼 <b>영양분석</b>까지</p>
-            </div>
-            <div>
-                <p><b>실시간</b>으로 줄어드는</p>
-                <p>나의 <b>군생활</b></p>
-            </div>
+            <FirstSection/>
+
             <Download
                 icons = {downloads}
             />
@@ -61,6 +59,7 @@ const LandingPage = () => {
                 빠르게 정리해
                 드릴게요</p>
         </section>
+        <GlobalCSS/>
     </>;
 };
 export default LandingPage;
