@@ -6,12 +6,7 @@ import {InputBox} from "../components/common/InputBox";
 import {CheckBox} from "../components/common/CheckBox";
 import {Button} from "../components/Button";
 
-
-
-
 const SignUp = () => {
-
-
     return <>
         <Layout>
             <h1 id="signinm" style={styles.signinm}>이미 회원인데요?!</h1>
