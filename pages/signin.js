@@ -5,29 +5,36 @@ import {ErrorBox} from "../components/common/ErrorBox";
 import {TextBox} from "../components/common/TextBox";
 
 import {login} from "../lib/Server";
-
-const onLoginClick = async ({phone, password, setErrorMsg}) => {
-    if(!phone || !password) setErrorMsg("모든 필드를 입력해주세요.");
-    else
-    {
-        const loginResponse = await login({phone, password});
-        console.log(loginResponse);
-        if (loginResponse.status !== 200)
-        {
-            setErrorMsg(loginResponse.data.error);
-        }
-        else
-        {
-            console.log("user token is ", loginResponse.data);
-        }
-    }
-};
-
+import React from "react";
+import {Loading} from "../components/common/Loading";
+import {useRouter} from "next/router";
 
 const Signin = () => {
+    const router = useRouter();
     const [phone, setPhone] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [errorMsg, setErrorMsg] = React.useState('');
+    const [isLoading, setLoading] = React.useState(false);
+
+    const onLoginClick = async ({phone, password, setErrorMsg}) => {
+        if(!phone || !password) setErrorMsg("모든 필드를 입력해주세요.");
+        else
+        {
+            setLoading(true);
+            const loginResponse = await login({phone, password});
+            setLoading(false);
+            console.log(loginResponse);
+            if (loginResponse.status !== 200)
+            {
+                setErrorMsg(loginResponse.data.error);
+            }
+            else
+            {
+                router.push('/');
+            }
+        }
+    };
+
 
     const fields = [
         {
@@ -68,6 +75,9 @@ const Signin = () => {
                     link="계정 정보 찾기"
                 />
             </Layout>
+            <Loading
+                isLoading={isLoading}
+            />
         </>
 }
 
