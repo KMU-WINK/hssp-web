@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Card(props) {
     return (
-      <div style={styles.Card}>
+      <div style={{...styles.Card, ...props.style}}>
           <div style={styles.CardView}>
               {props.children}
           </div>
