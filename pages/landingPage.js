@@ -39,6 +39,7 @@ const GlobalCSS = () => {
             background-color:#F7F7F7;
             font-family: SpoqaHanSans;
             font-weight : lighter;
+            letter-spacing: 0.24em;
         }
         `}
     </style>;
@@ -46,27 +47,16 @@ const GlobalCSS = () => {
 const LandingPage = () => {
     return<>
         <LandingHeader/>
-        <section>
-            <FirstSection/>
+        <FirstSection/>
 
-            <Download
-                icons = {downloads}
-            />
-        </section>
-        <section>
-            <p>당신을 위한 <b>다양한 혜택</b>을</p>
-            <p>놓치지 마세요</p>
-            <p>한 눈에 모아서
-                최신 소식을
-                빠르게 정리해
-                드릴게요</p>
-        </section>
-        <GlobalCSS/>
+        <Download
+            icons = {downloads}
+        />
+        <SecondSection/>
         <section style={styles.footer}>
             <Landingfooter/>
         </section>
-
-
+        <GlobalCSS/>
     </>;
 };
 const styles = {
