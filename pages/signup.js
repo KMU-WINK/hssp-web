@@ -6,19 +6,43 @@ import {InputBox} from "../components/common/InputBox";
 import {CheckBox} from "../components/common/CheckBox";
 import {Button} from "../components/Button";
 import {useRouter} from "next/router";
+import {ErrorBox} from "../components/common/ErrorBox";
+import React from "react";
 
 const SignUp = () => {
     const router = useRouter();
+    const [errorMsg, setErrorMsg] = React.useState('');
+
     const [phone, setPhone] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [name, setName] = React.useState('');
-    const [army, setArmy] = React.useState('');
+    const [army, setArmy] = React.useState('육군');
     const [birth, setBirth] = React.useState('');
     const [terms, setTerms] = React.useState(false);
     const [privacy, setPrivacy] = React.useState(false);
+    const onSignUp = () => {
+        let checkedField = 0;
+        const fields = [phone, password, name, army, birth];
+        fields.forEach(field => checkedField += !(!field)); // 비어있는 필드 카운트
+        if (checkedField === fields.length)
+        {
+            // 약관 체크 후 가입
+            console.log()
+        }
+        else
+        {
+            setErrorMsg('모든 필드를 입력하세요');
+        }
+    };
+
 
     return <>
         <Layout>
+            <ErrorBox
+                title="띠로리~!"
+                text={errorMsg}
+                setText={setErrorMsg}
+            />
             <h1 id="signinm" style={styles.signinm}>이미 회원인데요?!</h1>
             <Button
                 buttonname ="로그인"
@@ -49,7 +73,7 @@ const SignUp = () => {
             />
             <h1 id="menu" style={styles.menu}>군 분류</h1>
 
-            <select style={styles.dropdown} value={army} onChange={setArmy}>
+            <select style={styles.dropdown} value={army} onChange={(e)=>setArmy(e.target.value)}>
                 <option value="육군">육군</option>
                 <option value="해군">해군</option>
                 <option value="공군">공군</option>
@@ -70,13 +94,18 @@ const SignUp = () => {
 
             <CheckBox
                 checkboxmessage="고속상황전파체계 서비스 이용 약관동의 (필수)"
+                checked={terms}
+                onChange={()=>setTerms(!terms)}
+
             />
             <CheckBox
                 checkboxmessage="개인정보취급방침 동의 (필수)"
+                checked={privacy}
+                onChange={()=>setPrivacy(!privacy)}
             />
             <Button
                 buttonname ="회원가입"
-                onClick={()=>router.push('/signin')}
+                onClick={onSignUp}
             />
         </Layout>
     </>;
