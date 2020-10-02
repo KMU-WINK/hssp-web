@@ -8,6 +8,7 @@ import {Button} from "../components/Button";
 import {useRouter} from "next/router";
 import {ErrorBox} from "../components/common/ErrorBox";
 import React from "react";
+import {signUp} from "../lib/Server";
 
 const SignUp = () => {
     const router = useRouter();
@@ -20,14 +21,39 @@ const SignUp = () => {
     const [birth, setBirth] = React.useState('');
     const [terms, setTerms] = React.useState(false);
     const [privacy, setPrivacy] = React.useState(false);
-    const onSignUp = () => {
+    const onSignUp = async () => {
         let checkedField = 0;
         const fields = [phone, password, name, army, birth];
         fields.forEach(field => checkedField += !(!field)); // 비어있는 필드 카운트
         if (checkedField === fields.length)
         {
             // 약관 체크 후 가입
-            console.log()
+            if(terms && privacy)
+            {
+                const signUpResponse = await signUp({phone, password, name, army, birth});
+                if(!signUpResponse)
+                {
+                    setErrorMsg('서버 요청 실패!');
+
+                }else if (signUpResponse.status >= 200 && signUpResponse.status < 300)
+                {
+                    alert('회원가입을 환영합니다!');
+                    router.push('/signin');
+                }
+                else if (signUpResponse.status >= 400 && signUpResponse.status <= 500)
+                {
+                    setErrorMsg(signUpResponse.data.error);
+                }
+                else
+                {
+                    setErrorMsg('알 수 없는 오류');
+
+                }
+            }
+            else
+            {
+                setErrorMsg('모든 약관에 동의하세요.');
+            }
         }
         else
         {

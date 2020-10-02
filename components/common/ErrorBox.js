@@ -4,7 +4,7 @@ export function ErrorBox(props) {
     React.useEffect(() => {
         setTimeout(() => { // 3초 뒤 창을 닫음
             props.setText('');
-        }, 3000);
+        }, 5000);
     });
 
 
@@ -22,7 +22,6 @@ const styles = {
         left:0,
         zIndex:99,
         background:'#FF8585',
-        height : 108,
         width : '100%',
         textAlign : 'center',
         visibility: 'hidden',
