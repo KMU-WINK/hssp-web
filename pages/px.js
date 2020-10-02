@@ -97,9 +97,7 @@ const styles = {
         marginLeft : 20,
         color: colorSet.grey,
         marginBottom:15,
-
     }
-
 };
 
 
