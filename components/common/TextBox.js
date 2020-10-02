@@ -10,7 +10,7 @@ export function TextBox(props) {
 }
 const styles = {
     box : {
-        width : 200,
+        width : '100%',
         height : 36,
         fontSize : 10,
         textAlign :'center',
