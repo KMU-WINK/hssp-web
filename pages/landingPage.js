@@ -7,6 +7,8 @@ import AppStoreActive from "react-svg-loader!../assets/landingPage/appStoreActiv
 import WebBtn from "react-svg-loader!../assets/landingPage/WebBtn.svg"
 import WebBtnActive from "react-svg-loader!../assets/landingPage/WebBtnActive.svg"
 import {LandingHeader} from "../components/LandingPage/LandingHeader"
+import {Landingfooter} from "../components/LandingPage/Landingfooter"
+
 import {FirstSection} from "../components/LandingPage/FirstSection"
 
 const downloads = [
@@ -60,6 +62,18 @@ const LandingPage = () => {
                 드릴게요</p>
         </section>
         <GlobalCSS/>
+        <section style={styles.footer}>
+            <Landingfooter/>
+        </section>
+
+
     </>;
 };
+const styles = {
+    footer: {
+        height: 800,
+        position:'relative'
+    }
+}
+
 export default LandingPage;
