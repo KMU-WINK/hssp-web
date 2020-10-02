@@ -3,9 +3,8 @@ import React from 'react';
 export function CheckBox(props){
     return (
         <div>
-
-            <input type="checkbox" style={styles.checkbox}/>
             <label  style={styles.checkboxmessage}>
+                <input type="checkbox" checked={props.checked} onChange={props.onChange} style={styles.checkbox}/>
                 {props.checkboxmessage}
             </label>
         </div>
@@ -14,21 +13,19 @@ export function CheckBox(props){
 
 const styles = {
     checkbox : {
-        marginTop:32,
-        marginLeft : 20,
+        marginRight : 10,
         width: 20,
         height: 20,
         boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.16)',
         borderRadius: 2,
+
     },
     checkboxmessage : {
         marginTop:32,
         marginLeft : 10,
-        width: 219,
-        height: 36,
         fontSize: 12,
+        display:'flex',
         alignItems: 'center',
-        position: "absolute",
 
     }
 
