@@ -85,9 +85,9 @@ export const Layout = ({children}) => {
     }, ['']);
 
     return <>
-        <Header />
+        <Header style={styles.header} />
         <div>
-            <div className="container">
+            <div className="container" style={styles.content}>
                 {children}
             </div>
         </div>
@@ -100,4 +100,15 @@ export const Layout = ({children}) => {
         }
         <GlobalCSS />
     </>;
+};
+
+const styles = {
+    header : {
+        position:'fixed',
+        top:0,
+    },
+    content: {
+        paddingTop:80,
+        paddingBottom:100,
+    },
 };
