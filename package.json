@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "./node_modules/.bin/next"
+    "dev": "./node_modules/.bin/next",
+    "build": "next build"
   },
   "dependencies": {
     "axios": "^0.20.0",

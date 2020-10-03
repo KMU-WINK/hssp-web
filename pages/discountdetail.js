@@ -1,6 +1,6 @@
 import React from "react";
 import {Layout} from "../components/Layout";
-import {Card} from "../components/Card";
+import {Card} from "../components/common/Card";
 import {BenefitCard} from "../components/BenefitCard";
 import {BenefitHeader} from "../components/BenefitHeader";
 
