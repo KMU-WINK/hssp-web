@@ -33,7 +33,7 @@ const Index = () => {
             {console.log(foodData)}
             <CardHeader
                 name = "오늘의 식단"
-                settingBtn = "식단관리"
+                // settingBtn = "식단관리"
             />
             {foodData.map(food => <Card><MenuCard
                     name={
@@ -51,7 +51,7 @@ const Index = () => {
             }
             <CardHeader
                 name = "전역일 계산"
-                settingBtn = "휴가관리"
+                // settingBtn = "휴가관리"
             />
             <Card>
                 <CountAll

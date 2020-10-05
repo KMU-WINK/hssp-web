@@ -8,6 +8,7 @@ import Expend from "react-svg-loader!../assets/BottomTabBar/expend.svg";
 import Health from "react-svg-loader!../assets/BottomTabBar/health.svg";
 import Snack from "react-svg-loader!../assets/BottomTabBar/snack.svg";
 import Vacation from "react-svg-loader!../assets/BottomTabBar/vacation.svg";
+import {useRouter} from "next/router";
 
 const menuBar1 = [
     {
@@ -34,6 +35,8 @@ const menuBar4 = [
     }
 ];
 export const BottomTabBar = (props) => {
+    const router = useRouter();
+
     return <>
         {props.isOpenModal &&
         <div style={styles.modal}>
@@ -69,7 +72,14 @@ export const BottomTabBar = (props) => {
             </div>
             <ul className="container" style={styles.menu}>
                 {props.menus.map(menu => {
-                    return <li style={styles.menuItem}><Link href={menu.link}>{menu.icon}</Link></li>
+                    return <li style={styles.menuItem}>
+                        <Link href={menu.link}>
+                            {
+                                router.pathname === menu.link ?
+                                    menu.activeIcon: menu.icon
+                            }
+                        </Link>
+                    </li>
                 })}
             </ul>
         </nav>
