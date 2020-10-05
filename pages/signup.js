@@ -1,5 +1,3 @@
-import sReact from "react";
-import Link from 'next/link';
 import React from "react";
 
 import {Layout} from "../components/Layout";
@@ -64,8 +62,6 @@ const SignUp = () => {
             setErrorMsg('모든 필드를 입력하세요');
         }
     };
-
-
     return <>
         <Layout>
             <ErrorBox

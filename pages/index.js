@@ -30,7 +30,7 @@ const Index = () => {
                     alert("Error")
                 }
             } catch(err) {
-                alert("🚨오류발생🚨 빨리 고쳐볼게여 (；′⌒`)")
+                console.error("서버에서 정보를 받아오지 못함");
             }
         }
         exec();

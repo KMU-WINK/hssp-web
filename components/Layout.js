@@ -78,7 +78,7 @@ export const Layout = ({children}) => {
         {
             if (!allowNotLoggedPage.includes(router.pathname.replace('/', '')))
             {
-                router.push('/signin');
+                router.push('/signup');
             }
         }
 
