@@ -54,14 +54,8 @@ const Index = () => {
                 settingBtn = "휴가관리"
             />
             <Card>
-                <CountAll/>
-                <CountCard
-                    mealCount = '1547'
-                    yearBreak='13'
-                    oneBreak='1'
-                    twoBreak='2'
-                    twoBreak2='3'
-                    specialBreak='4'
+                <CountAll
+                    marchDate="2022-5-22" // 전역일을 서버에서 받아서 props로 내려주기
                 />
             </Card>
         </Layout>
