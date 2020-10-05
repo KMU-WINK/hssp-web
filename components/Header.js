@@ -20,6 +20,7 @@ const styles = {
         width:'100%',
         height:70,
         backgroundColor:colorSet.white,
+        zIndex:5,
         boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.07)',
     },
     headerContainer: {

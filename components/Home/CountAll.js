@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button} from "../Button";
+import {useRouter} from "next/router";
 
 
 class CountAll extends React.Component {
@@ -27,11 +28,13 @@ class CountAll extends React.Component {
 
     render() {
         const { days,h,t,o,mealCount, hours, minutes, seconds, progress } = this.state;
+
         return (
+
             <div style={styles.dayCountDiv}>
                 <div style={!this.props.marchDate ? {...styles.postDateModal} : {display:'none'}}>
                     <h3>전역일을 등록하고 카운팅 기능을 활용 해보세요!</h3>
-                    <Button buttonname="등록" style={{margin:0}} />
+                    <Button buttonname="등록" style={{margin:0}} onClick={this.props.onClickDateBtn} />
                 </div>
                 <div>
                     <div style={styles.dayCount}>

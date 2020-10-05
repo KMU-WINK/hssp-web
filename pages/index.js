@@ -8,6 +8,7 @@ import CountAll from "../components/Home/CountAll"
 import * as server from "../lib/Server";
 import axios from 'axios';
 import {PXCard} from "../components/PX/PXCard";
+import {useRouter} from "next/router";
 
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
         exec();
 
     }, ['']);
+    const router = useRouter();
     return <>
         <Layout>
             {console.log(foodData)}
@@ -55,7 +57,8 @@ const Index = () => {
             />
             <Card>
                 <CountAll
-                    marchDate="2022-5-22" // 전역일을 서버에서 받아서 props로 내려주기
+                    // marchDate="2022-5-22" // 전역일을 서버에서 받아서 props로 내려주기
+                    onClickDateBtn={() => router.push('/date')}
                 />
             </Card>
         </Layout>
