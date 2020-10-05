@@ -2,11 +2,9 @@ import React from 'react';
 
 export function Button(props){
     return (
-        <div style={{margin:10}}>
-           <button onClick={props.onClick} style={styles.button}>
-               <label style={styles.btext}>{props.buttonname}</label>
-           </button>
-        </div>
+       <button onClick={props.onClick} style={{...styles.button, ...props.style}}>
+           <label style={styles.btext}>{props.buttonname}</label>
+       </button>
     );
 }
 
@@ -14,7 +12,6 @@ const styles = {
     button : {
         width: '100%',
         height: 42,
-        left: 20,
         backgroundColor:'#64A321',
         borderRadius:35,
         border:'none',
@@ -28,7 +25,5 @@ const styles = {
         alignItems: 'center',
         textAlign: 'center',
         letterSpacing: 5,
-        left: 20,
-        top: 156,
     }
 };

@@ -9,6 +9,7 @@ import * as server from "../lib/Server";
 
 import axios from 'axios';
 import {PXCard} from "../components/PX/PXCard";
+import {useRouter} from "next/router";
 
 
 const Index = () => {
@@ -35,11 +36,12 @@ const Index = () => {
         exec();
 
     }, ['']);
+    const router = useRouter();
     return <>
         <Layout>
             <CardHeader
                 name = "오늘의 식단"
-                settingBtn = "식단관리"
+                // settingBtn = "식단관리"
             />
             <div style={styles.sliderView} id="menuSlider">
                 <div style={styles.cont}>
@@ -62,17 +64,12 @@ const Index = () => {
 
             <CardHeader
                 name = "전역일 계산"
-                settingBtn = "휴가관리"
+                // settingBtn = "휴가관리"
             />
             <Card>
-                <CountAll/>
-                <CountCard
-                    mealCount = '1547'
-                    yearBreak='13'
-                    oneBreak='1'
-                    twoBreak='2'
-                    twoBreak2='3'
-                    specialBreak='4'
+                <CountAll
+                    // marchDate="2022-5-22" // 전역일을 서버에서 받아서 props로 내려주기
+                    onClickDateBtn={() => router.push('/date')}
                 />
             </Card>
         </Layout>

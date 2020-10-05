@@ -11,10 +11,10 @@ export const PXCard = (props)=>{
                         {props.productName}
                     </label>
                     <label htmlFor="" style = {styles.manufacturer}>
-                        {props.productManufacturer}
+                        알 수 없음
                     </label>
                     <label htmlFor="" style = {styles.kcal}>
-                        {props.productKcal}
+                        알 수 없음
                     </label>
                 </div>
 
@@ -26,8 +26,7 @@ export const PXCard = (props)=>{
 
 const styles = {
     div : {
-        marginLeft:40,
-        width: 240,
+        marginBottom:30,
         height: 130,
         background: colorSet.white,
         borderRadius: 10,
@@ -35,7 +34,8 @@ const styles = {
     },
     img : {
         height: 100,
-        width : 85,
+        width : 100,
+        borderRadius: 6,
         display : "inline-block",
         marginTop : 15,
         marginLeft : 12,
@@ -44,9 +44,9 @@ const styles = {
     product : {
         fontWeight: "bold",
         fontSize: 16,
-        width: 120,
         height: 24,
-        marginLeft: 8,
+        marginLeft: 20,
+        marginRight: 20,
         marginTop : 15,
         display : "inline",
         position : "absolute",
@@ -70,7 +70,6 @@ const styles = {
         fontSize: 12,
         color : colorSet.black,
         display : "block",
-        margin : "14px 0 0 0",
         position : "relative"
     },
 };

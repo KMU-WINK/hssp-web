@@ -4,7 +4,7 @@ import {colorSet} from "../lib/ColorSet";
 
 export function Header(props){
     return <>
-        <div style={styles.header}>
+        <div style={{...styles.header, ...props.style}}>
             <div className="container" style={styles.headerContainer}>
                 <h1 style={styles.logoText}>생활관 막내</h1>
                 <div style={styles.logo}>
@@ -20,6 +20,7 @@ const styles = {
         width:'100%',
         height:70,
         backgroundColor:colorSet.white,
+        zIndex:5,
         boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.07)',
     },
     headerContainer: {
