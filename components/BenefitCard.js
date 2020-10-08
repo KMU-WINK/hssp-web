@@ -2,7 +2,7 @@ import React from 'react';
 
 export function BenefitCard(props) {
     return(
-        <div style={styles.card}>
+        <div style={styles.card} onClick={props.onClick}>
             <div style={styles.imgbox}>
                 <img style={styles.img} src={props.logo} alt="로고"/>
             </div>

@@ -6,11 +6,12 @@ import {Card} from "../components/common/Card";
 import {CardHeader} from "../components/common/CardHeader";
 import {BenefitCard} from "../components/BenefitCard";
 import * as server from "../lib/Server";
+import {useRouter} from "next/router";
 
 const DiscountBenfits = () =>{
     const [cardBenefit, setCardBenefit] = useState([]);
     const [statusBenefit, setStatusBenefit] = useState([]);
-
+    const router = useRouter();
     useEffect(()=>{
         async function exec(){
             try{
@@ -41,7 +42,7 @@ const DiscountBenfits = () =>{
                     logo = {cardBenefit.img}
                     cardName = {cardBenefit.name}
                     benefitSummary = {cardBenefit.detail}
-
+                    onClick={()=>router.push('/discountdetail')}
                     />
                 </Card>
                 )}
